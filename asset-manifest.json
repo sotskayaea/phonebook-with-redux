@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/phonebook-with-redux/static/css/main.0cb8584f.css",
+    "main.js": "/phonebook-with-redux/static/js/main.3f81ee11.js",
+    "index.html": "/phonebook-with-redux/index.html",
+    "main.0cb8584f.css.map": "/phonebook-with-redux/static/css/main.0cb8584f.css.map",
+    "main.3f81ee11.js.map": "/phonebook-with-redux/static/js/main.3f81ee11.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.0cb8584f.css",
+    "static/js/main.3f81ee11.js"
+  ]
+}
