@@ -1,59 +1,17 @@
-import React, { useState, useEffect } from 'react';
 import ContactForm from './ContactForm/ContactForm';
 import Filter from './Filter/Filter';
 import ContactList from './ContactList/ContactList';
+import style from './App.module.css';
 
 const App = () => {
-  const [contacts, setContacts] = useState(() => {
-    const contacts = localStorage.getItem('contacts');
-    const parsedContacts = JSON.parse(contacts);
-
-    if (parsedContacts.length > 0) {
-      return parsedContacts;
-    }
-
-    return [];
-  });
-
-  useEffect(() => {
-    return localStorage.setItem('contacts', JSON.stringify(contacts));
-  }, [contacts]);
-
-  const [filter, setFilter] = useState('');
-
-  const onAddContact = contactData => {
-    setContacts([...contacts, contactData]);
-  };
-
-  const onInputFilter = e => {
-    setFilter(e.currentTarget.value);
-
-    onCheckFilter(filter);
-  };
-  const onCheckFilter = filter => {
-    const filteredContacts = contacts.filter(item => {
-      const contact = item.name.toLowerCase();
-      return contact.includes(filter.toLowerCase());
-    });
-
-    return filteredContacts;
-  };
-  const onDeleteContact = id => {
-    return setContacts(contacts.filter(contact => contact.id !== id));
-  };
-
   return (
-    <>
-      <h1>Phonebook</h1>
-      <ContactForm onAddContact={onAddContact} contacts={contacts} />
-
-      <h2>Contacts</h2>
-      <Filter onInputFilter={onInputFilter} value={filter} />
-      <ContactList
-        contacts={onCheckFilter(filter)}
-        onDeleteContact={onDeleteContact}
-      />
-    </>
+    <div className={style.phonebook}>
+      <h1 className={style.title}>Phonebook</h1>
+      <ContactForm />
+      <h2 className={style.subtitle}>Contacts</h2>
+      <Filter />
+      <ContactList />
+    </div>
   );
 };
 
