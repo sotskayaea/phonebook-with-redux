@@ -1,8 +1,8 @@
 {
-  "name": "react-hw-6-phonebook",
+  "name": "phonebook-with-redux",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://goitacademy.github.io/react-hw-6-phonebook/",
+  "homepage": "https://goitacademy.github.io/phonebook-with-redux/",
   "dependencies": {
     "@material/web": "^1.1.1",
     "@reduxjs/toolkit": "^2.2.1",
